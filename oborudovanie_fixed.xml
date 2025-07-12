@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2025-07-12 12:00">
+  <shop>
+    <name>Dream Studio</name>
+    <company>Dream Studio</company>
+    <url>https://dreamstudio.team</url>
+    <currencies>
+      <currency id="RUB" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Свет</category>
+      <category id="2">Стойки</category>
+      <category id="3">Другое оборудование</category>
+      <category id="4">Фоны и реквизит</category>
+    </categories>
+    <offers>
+      <!-- Свет -->
+      <offer id="octobox-150" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3531-3161-4164-b066-301356264326/156feacf05900d7fcf131.jpg</picture>
+        <name>Октобокс Raylab SPG150 150 см</name>
+        <vendor>Raylab</vendor>
+        <description>В наличии 2 шт. Мягкое освещение для фото и видео. Соты и рассеиватели. Идеален для портрета, предметки и фэшн.</description>
+      </offer>
+      <offer id="reflector-honeycomb" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3439-3061-4235-b935-316464616631/b8129fb819744ecda063.jpg</picture>
+        <name>Рефлектор с сотами 17.8 см</name>
+        <description>В наличии 4 шт. Рефлектор с четырьмя насадками-сотами (10°, 20°, 30°, 40°). Для направленного и акцентного света.</description>
+      </offer>
+      <offer id="stripbox-30x120" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3536-3438-4065-b436-313062373436/175a3e95eb823474df2c.jpg</picture>
+        <name>Стрипбокс Raylab 30×120 см</name>
+        <vendor>Raylab</vendor>
+        <description>В наличии 2 шт. Быстроскладной стрипбокс с сотами. Мягкий рассеянный свет без теней и бликов.</description>
+      </offer>
+      <offer id="stripbox-40x180" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild6365-6133-4566-b966-636438386637/sG--PjWlACg.jpeg</picture>
+        <name>Стрипбокс Raylab 40×180 см</name>
+        <vendor>Raylab</vendor>
+        <description>В наличии 2 шт. Яркий узкий луч, широкая фон. подсветка. Для студийных, фэшн- и стрим-съёмок.</description>
+      </offer>
+      <offer id="reflector-raylab-rf09" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3236-3333-4261-a164-393965636262/1na_MDfVWCI.jpg</picture>
+        <name>Отражатель Raylab RF-09 (2-в-1)</name>
+        <vendor>Raylab</vendor>
+        <description>Белый и серебряный отражатель для управления светом и тенями, портрет, предметка, фэшн.</description>
+      </offer>
+      <offer id="aputure-light-dome-mini-se" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild6138-6536-4262-b166-323330636364/203ae61451ecdedb62ef.jpg</picture>
+        <name>Софтбокс Aputure Light Dome Mini SE</name>
+        <vendor>Aputure</vendor>
+        <description>Bowens. Быстросъёмная конструкция, глубокая парабола. Округлые блики для портрета/видео.</description>
+      </offer>
+      <offer id="aputure-lightbox-60x90" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3437-3832-4538-b431-313965663566/g-LFn8LIXsA.jpeg</picture>
+        <name>Софтбокс Aputure Light Box 60×90 см</name>
+        <vendor>Aputure</vendor>
+        <description>В наличии 4 шт. Прямоугольный, два рассеивателя разной плотности, соты 45°.</description>
+      </offer>
+      <offer id="aputure-lightbox-30x120" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3530-3365-4134-b539-393363626263/IuG7HBR0Dbc.jpeg</picture>
+        <name>Софтбокс Aputure Light Box 30×120 см</name>
+        <vendor>Aputure</vendor>
+        <description>В наличии 2 шт. Узкая форма, мягкий широкий свет, два рассеивателя и соты 45°.</description>
+      </offer>
+      <offer id="aputure-light-dome-iii" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild6232-3964-4431-b535-626637626238/LpsPQFv8bPo.jpeg</picture>
+        <name>Софтбокс Aputure Light Dome III</name>
+        <vendor>Aputure</vendor>
+        <description>Параболический софтбокс. Мягкое освещение, естественные блики. Быстросъёмный механизм.</description>
+      </offer>
+      <offer id="amaran-lantern-90" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3032-3531-4438-b264-313637323631/4b7cd87705c1c7531f0b.png</picture>
+        <name>Софтбокс amaran Lantern 90 (China Ball)</name>
+        <vendor>amaran</vendor>
+        <description>Стоимость 300 ₽/смена (до 6 ч), 450 ₽/смена (более 6 ч). Округлый свет для видео.</description>
+      </offer>
+      <offer id="spotlight-se-36" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3538-6133-4363-a465-653435383134/bfef76d94996066488e5.jpg</picture>
+        <name>Светоформирующая насадка Spotlight SE 36°</name>
+        <vendor>Aputure</vendor>
+        <description>Стоимость 300 ₽/ч, 1200 ₽/6 ч. Фокусировщик луча, гобо-адаптер, 4 заслонки.</description>
+      </offer>
+      <offer id="godox-bdr-s55" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3661-6233-4135-a137-376438303039/aa6ffa18212437a299ba.png</picture>
+        <name>Портретная тарелка Godox BDR-S55 (серебро)</name>
+        <vendor>Godox</vendor>
+        <description>Диаметр 53 см, Bowens. Жёсткий, ровный, контрастный свет для портретов.</description>
+      </offer>
+      <offer id="frost-frame-122" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>600</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild6338-3066-4465-a337-323331376337/5eJaj0SCYYw.jpg</picture>
+        <name>Фрострама 122×122 см с текстилем</name>
+        <description>600 ₽ за всю съёмку. Рама с текстильным рассеивателем для мягкого света.</description>
+      </offer>
+      <offer id="amaran-300c" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3135-6436-4462-b930-336636366437/tUnbFwgX2NA.jpg</picture>
+        <name>Светодиодный моноблок Amaran 300°C</name>
+        <vendor>Amaran</vendor>
+        <description>RGBWW, HSI, CCT 2500–7500K. Первый источник — бесплатно, доп. — 300 ₽/ч, до 6 ч — 200 ₽/ч.</description>
+      </offer>
+      <offer id="godox-dp-600" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3838-6636-4430-b034-646438373263/a8cecc025c9c94df8f60.jpg</picture>
+        <name>Студийная вспышка Godox DP 600 IIIV</name>
+        <vendor>Godox</vendor>
+        <description>600 Дж, Godox 2.4G X, импульс до 1/800 с. 3 шт в зале, доп. — 300 ₽/ч, до 6 ч — 200 ₽/ч.</description>
+      </offer>
+      <offer id="godox-dp-8000" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>400</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3834-3039-4363-a131-623739396662/9a2f8f011b25da8e4aae.jpg</picture>
+        <name>Студийная вспышка Godox DP 8000 IIIV</name>
+        <vendor>Godox</vendor>
+        <description>Ускоренная перезарядка, расширенный диапазон мощности. 400 ₽/ч, от 6 ч — 300 ₽/ч.</description>
+      </offer>
+      <offer id="godox-xpro-ii" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3738-6466-4839-b632-356534346131/30c303fa6e1382f395ee.jpg</picture>
+        <name>Синхронизатор Godox XPro II для Sony</name>
+        <vendor>Godox</vendor>
+        <description>Godox X 2.4 ГГц, до 100 м, HSS до 1/8000 с, 16 групп, 32 канала.</description>
+      </offer>
+
+      <!-- СТОЙКИ -->
+      <offer id="kupo-483t" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6235-3366-4935-b461-303337306537/pSyYxnJkyYA.jpeg</picture>
+        <name>Стойка Kupo 483T 3 SCT Wind-Up Stand</name>
+        <vendor>Kupo</vendor>
+        <description>С редукторной колонной, Auto Self-Locking. Для тяжёлого света и оборудования.</description>
+      </offer>
+      <offer id="kupo-cs-40mk" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6237-6234-4364-a164-663238646231/5HXNb70T49c.jpg</picture>
+        <name>Стойка KUPO CS-40MK MASTER C-STAND GRIP ARM</name>
+        <vendor>Kupo</vendor>
+        <description>Грузоподъёмность до 10 кг, высота 134–325 см. Для студийного оборудования.</description>
+      </offer>
+      <offer id="falcon-l3900" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6464-3466-4465-b866-633937343332/xkGq-aU-qFg.jpg</picture>
+        <name>Стойка Falcon Eyes L-3900</name>
+        <vendor>Falcon Eyes</vendor>
+        <description>Студийная стойка для света, компактная и надёжная.</description>
+      </offer>
+      <offer id="kupo-483t-1" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6235-3366-4935-b461-303337306537/pSyYxnJkyYA.jpeg</picture>
+        <name>Стойка KUPO 483T 3 SCT Wind-Up Stand (1 шт)</name>
+        <vendor>Kupo</vendor>
+        <description>Ещё одна стойка в наличии. Для тяжёлых осветителей и аксессуаров.</description>
+      </offer>
+      <offer id="kupo-kc-100" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6466-6436-4436-b862-643832373861/DtM8RUorsKw.jpg</picture>
+        <name>Стойка KUPO KC-100 Casters dia100 mm M10</name>
+        <vendor>Kupo</vendor>
+        <description>Диаметр 100 мм, подвижные колёса. В наличии 1 шт.</description>
+      </offer>
+
+      <!-- ДРУГОЕ ОБОРУДОВАНИЕ -->
+      <offer id="involight-fm1200" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild3362-3766-4564-b232-373466623235/rHwL1TT67Qg.jpg</picture>
+        <name>Дым-машина Involight FM1200</name>
+        <vendor>Involight</vendor>
+        <description>1200 Вт, проводной+радио ДУ, выброс до 8 м. Аренда 1 ч — 200 ₽, смена — 800 ₽.</description>
+      </offer>
+      <offer id="lensgo-smoke-b" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild3063-3138-4036-b837-333033393936/c37594855e083bc23a91.jpg</picture>
+        <name>LENSGO Smoke B</name>
+        <vendor>LENSGO</vendor>
+        <description>Портативный дымогенератор, 40 Вт, АКБ, насадка-вентилятор. Аренда 200 ₽/ч, смена — 800 ₽.</description>
+      </offer>
+      <offer id="rekam-twt500" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild6666-6465-4565-a366-386462663234/7114d86a48adfa22c2a7.jpg</picture>
+        <name>Вентилятор Rekam TWT-500</name>
+        <vendor>Rekam</vendor>
+        <description>46 см, поток 2880 м³/ч, скорость 1400 об/мин. Тихий вентилятор для студии.</description>
+      </offer>
+      <offer id="flags-200x100" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild3737-6164-4736-b335-353464383365/YokhP3oLkIs.jpg</picture>
+        <name>Флаги 200×100 см</name>
+        <description>Размер 200×100 см. Для создания теней и управления светом в кадре.</description>
+      </offer>
+      <offer id="mirror-flex-120x170" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild3261-6166-4630-b938-653236343166/cfe2a804712069706f5d.jpg</picture>
+        <name>Зеркало гибкое 120×170 см</name>
+        <description>Двустороннее (серебряное/золотое). Аренда 200 ₽/ч, смена — 800 ₽.</description>
+      </offer>
+      <offer id="canvas" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>1000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://static.tildacdn.com/tild6337-6564-4262-b636-626638363333/2d74548c2fd05e67a1a9.png</picture>
+        <name>Холсты</name>
+        <description>Ручная работа. Стоимость 1000 ₽/ч, от 6 ч — 800 ₽/ч. Для креативных фонов и реквизита.</description>
+      </offer>
+
+      <!-- ФОНЫ -->
+      <offer id="backdrops-paper" available="true">
+        <url>https://dreamstudio.team/equipment</url>
+        <price>0</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://static.tildacdn.com/tild3536-3432-4063-b831-333639336263/IMG_8307_1.jpg</picture>
+        <name>Бумажные фоны</name>
+        <description>Роллы разных цветов и размеров (2.72×11 м). Идеальны для студийных и предметных съёмок.</description>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
