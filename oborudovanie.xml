@@ -1,0 +1,310 @@
+xml version=1.0 encoding=UTF-8
+yml_catalog date=2025-07-12 1200
+  shop
+    nameDream Studioname
+    companyDream Studiocompany
+    urlhttpsdreamstudio.teamurl
+    currencies
+      currency id=RUB rate=1
+    currencies
+    categories
+      category id=1Светcategory
+      category id=2Стойкиcategory
+      category id=3Другое оборудованиеcategory
+      category id=4Фоны и реквизитcategory
+    categories
+    offers
+      !-- Свет --
+      offer id=octobox-150 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3531-3161-4164-b066-30356264326156feacf05900d7fcf131.jpgpicture
+        nameОктобокс Raylab SPG150 150 смname
+        vendorRaylabvendor
+        descriptionВ наличии 2 шт. Мягкое освещение для фото и видео. Соты и рассеиватели. Идеален для портрета, предметки и фэшн.description
+      offer
+      offer id=reflector-honeycomb available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3439-3061-4235-b935-316464616631b8129fb819744ecda063.jpgpicture
+        nameРефлектор с сотами 17.8 смname
+        descriptionВ наличии 4 шт. Рефлектор с четырьмя насадками-сотами (10°, 20°, 30°, 40°). Для направленного и акцентного света.description
+      offer
+      offer id=stripbox-30x120 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3536-3438-4065-b436-313062373436175a3e95eb823474df2c.jpgpicture
+        nameСтрипбокс Raylab 30×120 смname
+        vendorRaylabvendor
+        descriptionВ наличии 2 шт. Быстроскладной стрипбокс с сотами. Мягкий рассеянный свет без теней и бликов.description
+      offer
+      offer id=stripbox-40x180 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild6365-6133-4566-b966-636438386637sG--PjWlACg.jpegpicture
+        nameСтрипбокс Raylab 40×180 смname
+        vendorRaylabvendor
+        descriptionВ наличии 2 шт. Яркий узкий луч, широкая фон. подсветка. Для студийных, фэшн- и стрим-съёмок.description
+      offer
+      offer id=reflector-raylab-rf09 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3236-3333-4261-a164-3939656362621na_MDfVWCI.jpgpicture
+        nameОтражатель Raylab RF-09 (2-в-1)name
+        vendorRaylabvendor
+        descriptionБелый и серебряный отражатель для управления светом и тенями, портрет, предметка, фэшн.description
+      offer
+      offer id=aputure-light-dome-mini-se available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild6138-6536-4262-b166-323330636364203ae61451ecdedb62ef.jpgpicture
+        nameСофтбокс Aputure Light Dome Mini SEname
+        vendorAputurevendor
+        descriptionBowens. Быстросъёмная конструкция, глубокая парабола. Округлые блики для портретавидео.description
+      offer
+      offer id=aputure-lightbox-60x90 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3437-3832-4538-b431-313965663566g-LFn8LIXsA.jpegpicture
+        nameСофтбокс Aputure Light Box 60×90 смname
+        vendorAputurevendor
+        descriptionВ наличии 4 шт. Прямоугольный, два рассеивателя разной плотности, соты 45°.description
+      offer
+      offer id=aputure-lightbox-30x120 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3530-3365-4134-b539-393363626263IuG7HBR0Dbc.jpegpicture
+        nameСофтбокс Aputure Light Box 30×120 смname
+        vendorAputurevendor
+        descriptionВ наличии 2 шт. Узкая форма, мягкий широкий свет, два рассеивателя и соты 45°.description
+      offer
+      offer id=aputure-light-dome-iii available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild6232-3964-4431-b535-626637626238LpsPQFv8bPo.jpegpicture
+        nameСофтбокс Aputure Light Dome IIIname
+        vendorAputurevendor
+        descriptionПараболический софтбокс. Мягкое освещение, естественные блики. Быстросъёмный механизм.description
+      offer
+      offer id=amaran-lantern-90 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price300price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3032-3531-4438-b264-3136373236314b7cd87705c1c7531f0b.pngpicture
+        nameСофтбокс amaran Lantern 90 (China Ball)name
+        vendoramaranvendor
+        descriptionСтоимость 300 ₽смена (до 6 ч), 450 ₽смена (более 6 ч). Округлый свет для видео.description
+      offer
+      offer id=spotlight-se-36 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price300price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3538-6133-4363-a465-653435383134bfef76d94996066488e5.jpgpicture
+        nameСветоформирующая насадка Spotlight SE 36°name
+        vendorAputurevendor
+        descriptionСтоимость 300 ₽ч, 1200 ₽6 ч. Фокусировщик луча, гобо-адаптер, 4 заслонки.description
+      offer
+      offer id=godox-bdr-s55 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3661-6233-4135-a137-376438303039aa6ffa18212437a299ba.pngpicture
+        nameПортретная тарелка Godox BDR-S55 (серебро)name
+        vendorGodoxvendor
+        descriptionДиаметр 53 см, Bowens. Жёсткий, ровный, контрастный свет для портретов.description
+      offer
+      offer id=frost-frame-122 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price600price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild6338-3066-4465-a337-3233313763375eJaj0SCYYw.jpgpicture
+        nameФрострама 122×122 см с текстилемname
+        description600 ₽ за всю съёмку. Рама с текстильным рассеивателем для мягкого света.description
+      offer
+      offer id=amaran-300c available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price300price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3135-6436-4462-b930-336636366437tUnbFwgX2NA.jpgpicture
+        nameСветодиодный моноблок Amaran 300°Cname
+        vendorAmaranvendor
+        descriptionRGBWW, HSI, CCT 2500–7500K. Первый источник — бесплатно, доп. — 300 ₽ч, до 6 ч — 200 ₽ч.description
+      offer
+      offer id=godox-dp-600 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price300price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3838-6636-4430-b034-646438373263a8cecc025c9c94df8f60.jpgpicture
+        nameСтудийная вспышка Godox DP 600 IIIVname
+        vendorGodoxvendor
+        description600 Дж, Godox 2.4G X, импульс до 1800 с. 3 шт в зале, доп. — 300 ₽ч, до 6 ч — 200 ₽ч.description
+      offer
+      offer id=godox-dp-8000 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price400price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3834-3039-4363-a131-6237393966629a2f8f011b25da8e4aae.jpgpicture
+        nameСтудийная вспышка Godox DP 8000 IIIVname
+        vendorGodoxvendor
+        descriptionУскоренная перезарядка, расширенный диапазон мощности. 400 ₽ч, от 6 ч — 300 ₽ч.description
+      offer
+      offer id=godox-xpro-ii available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId1categoryId
+        picturehttpsstatic.tildacdn.comtild3738-6466-4839-b632-35653434613130c303fa6e1382f395ee.jpgpicture
+        nameСинхронизатор Godox XPro II для Sonyname
+        vendorGodoxvendor
+        descriptionGodox X 2.4 ГГц, до 100 м, HSS до 18000 с, 16 групп, 32 канала.description
+      offer
+
+      !-- СТОЙКИ --
+      offer id=kupo-483t available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId2categoryId
+        picturehttpsstatic.tildacdn.comtild6235-3366-4935-b461-303337306537pSyYxnJkyYA.jpegpicture
+        nameСтойка Kupo 483T 3 SCT Wind-Up Standname
+        vendorKupovendor
+        descriptionС редукторной колонной, Auto Self-Locking. Для тяжёлого света и оборудования.description
+      offer
+      offer id=kupo-cs-40mk available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId2categoryId
+        picturehttpsstatic.tildacdn.comtild6237-6234-4364-a164-6632386462315HXNb70T49c.jpgpicture
+        nameСтойка KUPO CS-40MK MASTER C-STAND GRIP ARMname
+        vendorKupovendor
+        descriptionГрузоподъёмность до 10 кг, высота 134–325 см. Для студийного оборудования.description
+      offer
+      offer id=falcon-l3900 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId2categoryId
+        picturehttpsstatic.tildacdn.comtild6464-3466-4465-b866-633937343332xkGq-aU-qFg.jpgpicture
+        nameСтойка Falcon Eyes L-3900name
+        vendorFalcon Eyesvendor
+        descriptionСтудийная стойка для света, компактная и надёжная.description
+      offer
+      offer id=kupo-483t-1 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId2categoryId
+        picturehttpsstatic.tildacdn.comtild6235-3366-4935-b461-303337306537pSyYxnJkyYA.jpegpicture
+        nameСтойка KUPO 483T 3 SCT Wind-Up Stand (1 шт)name
+        vendorKupovendor
+        descriptionЕщё одна стойка в наличии. Для тяжёлых осветителей и аксессуаров.description
+      offer
+      offer id=kupo-kc-100 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId2categoryId
+        picturehttpsstatic.tildacdn.comtild6466-6436-4436-b862-643832373861DtM8RUorsKw.jpgpicture
+        nameСтойка KUPO KC-100 Casters dia100 mm M10name
+        vendorKupovendor
+        descriptionДиаметр 100 мм, подвижные колёса. В наличии 1 шт.description
+      offer
+
+      !-- ДРУГОЕ ОБОРУДОВАНИЕ --
+      offer id=involight-fm1200 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price200price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild3362-3766-4564-b232-373466623235rHwL1TT67Qg.jpgpicture
+        nameДым-машина Involight FM1200name
+        vendorInvolightvendor
+        description1200 Вт, проводной+радио ДУ, выброс до 8 м. Аренда 1 ч — 200 ₽, смена — 800 ₽.description
+      offer
+      offer id=lensgo-smoke-b available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price200price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild3063-3138-4036-b837-333033393936c37594855e083bc23a91.jpgpicture
+        nameLENSGO Smoke Bname
+        vendorLENSGOvendor
+        descriptionПортативный дымогенератор, 40 Вт, АКБ, насадка-вентилятор. Аренда 200 ₽ч, смена — 800 ₽.description
+      offer
+      offer id=rekam-twt500 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild6666-6465-4565-a366-3864626632347114d86a48adfa22c2a7.jpgpicture
+        nameВентилятор Rekam TWT-500name
+        vendorRekamvendor
+        description46 см, поток 2880 м³ч, скорость 1400 обмин. Тихий вентилятор для студии.description
+      offer
+      offer id=flags-200x100 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild3737-6164-4736-b335-353464383365YokhP3oLkIs.jpgpicture
+        nameФлаги 200×100 смname
+        descriptionРазмер 200×100 см. Для создания теней и управления светом в кадре.description
+      offer
+      offer id=mirror-flex-120x170 available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price200price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild3261-6166-4630-b938-653236343166cfe2a804712069706f5d.jpgpicture
+        nameЗеркало гибкое 120×170 смname
+        descriptionДвустороннее (серебряноезолотое). Аренда 200 ₽ч, смена — 800 ₽.description
+      offer
+      offer id=canvas available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price1000price
+        currencyIdRUBcurrencyId
+        categoryId3categoryId
+        picturehttpsstatic.tildacdn.comtild6337-6564-4262-b636-6266383633332d74548c2fd05e67a1a9.pngpicture
+        nameХолстыname
+        descriptionРучная работа. Стоимость 1000 ₽ч, от 6 ч — 800 ₽ч. Для креативных фонов и реквизита.description
+      offer
+
+      !-- ФОНЫ --
+      offer id=backdrops-paper available=true
+        urlhttpsdreamstudio.teamequipmenturl
+        price0price
+        currencyIdRUBcurrencyId
+        categoryId4categoryId
+        picturehttpsstatic.tildacdn.comtild3536-3432-4063-b831-333639336263IMG_8307_1.jpgpicture
+        nameБумажные фоныname
+        descriptionРоллы разных цветов и размеров (2.72×11 м). Идеальны для студийных и предметных съёмок.description
+      offer
+    offers
+  shop
+yml_catalog
