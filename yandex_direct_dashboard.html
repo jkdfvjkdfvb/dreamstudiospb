@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дашборд Яндекс.Директ — Мотоциклы</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card2: #263248;
+    --border: #334155;
+    --yellow: #FFCC00;
+    --yellow-dim: rgba(255, 204, 0, 0.12);
+    --blue: #3B82F6;
+    --blue-dim: rgba(59, 130, 246, 0.15);
+    --green: #22c55e;
+    --red: #ef4444;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1a2744 100%);
+    border-bottom: 2px solid var(--yellow);
+    padding: 24px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.5);
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .yandex-logo {
+    background: var(--yellow);
+    color: #0f172a;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+  }
+  .header-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .header-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .header-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .date-badge {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.18s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-yellow {
+    background: var(--yellow);
+    color: #0f172a;
+  }
+  .btn-yellow:hover { background: #f5c400; box-shadow: 0 0 0 3px rgba(255,204,0,0.25); }
+  .btn-blue {
+    background: var(--blue);
+    color: #fff;
+  }
+  .btn-blue:hover { background: #2563eb; box-shadow: 0 0 0 3px rgba(59,130,246,0.25); }
+  .btn-ghost {
+    background: var(--card);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { background: var(--card2); color: var(--text); border-color: var(--text-dim); }
+  .btn-copy {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn-copy:hover { background: var(--blue-dim); color: var(--blue); border-color: var(--blue); }
+  .btn-copy.copied { background: rgba(34,197,94,0.15); color: var(--green); border-color: var(--green); }
+
+  /* MAIN CONTAINER */
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 24px; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    padding: 28px 0 0 0;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 0.2s;
+  }
+  .stat-card:hover { border-color: var(--yellow); }
+  .stat-icon {
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow-dim);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .stat-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* FILTER TABS */
+  .filter-section {
+    padding: 24px 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .filter-label { color: var(--text-muted); font-size: 12px; margin-right: 4px; white-space: nowrap; }
+  .filter-tab {
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text-muted);
+    transition: all 0.18s ease;
+    white-space: nowrap;
+  }
+  .filter-tab:hover { border-color: var(--yellow); color: var(--yellow); }
+  .filter-tab.active {
+    background: var(--yellow);
+    color: #0f172a;
+    border-color: var(--yellow);
+  }
+
+  /* CLUSTER GRID */
+  .clusters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(680px, 1fr));
+    gap: 24px;
+    padding: 24px 0 40px 0;
+  }
+  @media (max-width: 760px) {
+    .clusters-grid { grid-template-columns: 1fr; }
+  }
+
+  /* CLUSTER CARD */
+  .cluster-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    animation: fadeIn 0.35s ease both;
+  }
+  .cluster-card:hover {
+    border-color: rgba(255,204,0,0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .cluster-card.hidden { display: none; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cluster-header {
+    padding: 18px 22px;
+    background: linear-gradient(90deg, var(--card2) 0%, var(--card) 100%);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .cluster-title-row { display: flex; align-items: center; gap: 12px; }
+  .cluster-icon {
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--yellow-dim);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .cluster-name { font-size: 16px; font-weight: 700; color: var(--text); }
+  .cluster-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .cluster-badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .badge-high { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+  .badge-medium { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid rgba(59,130,246,0.3); }
+  .volume-badge {
+    background: var(--yellow-dim);
+    color: var(--yellow);
+    border: 1px solid rgba(255,204,0,0.25);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* TABS inside card */
+  .card-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-tab {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.18s ease;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .card-tab:hover { color: var(--text); background: var(--blue-dim); }
+  .card-tab.active { color: var(--yellow); border-bottom-color: var(--yellow); background: var(--yellow-dim); }
+
+  /* QUERIES PANEL */
+  .queries-panel { padding: 18px 22px; display: none; }
+  .queries-panel.active { display: block; }
+  .queries-list { display: flex; flex-direction: column; gap: 8px; }
+  .query-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .query-rank {
+    font-size: 11px;
+    color: var(--text-dim);
+    width: 16px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .query-text {
+    font-size: 13px;
+    color: var(--text);
+    flex: 0 0 auto;
+    min-width: 180px;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .query-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 60px;
+  }
+  .query-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--yellow) 0%, #f59e0b 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+  .query-freq {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--yellow);
+    width: 60px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* AD PANEL */
+  .ad-panel { padding: 18px 22px; display: none; }
+  .ad-panel.active { display: block; }
+  .ad-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+  }
+  .ad-section-label:first-child { margin-top: 0; }
+  .ad-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: border-color 0.15s;
+  }
+  .ad-item:hover { border-color: var(--blue); }
+  .ad-text-content { flex: 1; min-width: 0; }
+  .ad-text-value {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .ad-text-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  .char-count {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    line-height: 1;
+  }
+  .char-ok { background: rgba(34,197,94,0.15); color: var(--green); }
+  .char-over { background: rgba(239,68,68,0.15); color: var(--red); }
+  .char-limit { font-size: 10px; color: var(--text-dim); }
+  .ad-copy-btn { flex-shrink: 0; margin-top: 2px; }
+
+  /* PREVIEW tab */
+  .preview-panel { padding: 18px 22px; display: none; }
+  .preview-panel.active { display: block; }
+  .yandex-ad-preview {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 480px;
+  }
+  .preview-ad-mark {
+    display: inline-block;
+    background: #FFCC00;
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+  }
+  .preview-headline {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0000cc;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .preview-text {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.5;
+  }
+  .preview-url {
+    font-size: 12px;
+    color: #007700;
+    margin-top: 6px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 32px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+  }
+
+  /* TOAST */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1e293b;
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 0;
+  }
+
+  /* scroll offset for sticky header */
+  .scroll-target { scroll-margin-top: 80px; }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .site-header { padding: 16px; }
+    .container { padding: 0 12px; }
+    .cluster-header { padding: 14px; }
+    .queries-panel, .ad-panel, .preview-panel { padding: 14px; }
+    .query-text { min-width: 120px; max-width: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-left">
+    <div class="yandex-logo">Я</div>
+    <div>
+      <div class="header-title">Дашборд Яндекс.Директ — Мотоциклы</div>
+      <div class="header-subtitle">Кластеры ключевых слов · Рекламные объявления · Статистика Wordstat</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date-badge">📅 2026-06-13</div>
+    <button class="btn btn-yellow" onclick="exportCSV()">⬇ Экспорт CSV</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon">🗂</div>
+      <div>
+        <div class="stat-value">8</div>
+        <div class="stat-label">Кластеров</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔑</div>
+      <div>
+        <div class="stat-value" id="total-queries">0</div>
+        <div class="stat-label">Запросов</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div>
+        <div class="stat-value" id="total-volume">0</div>
+        <div class="stat-label">Показов/мес. (Wordstat)</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📝</div>
+      <div>
+        <div class="stat-value">24</div>
+        <div class="stat-label">Готовых объявлений</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-section">
+    <span class="filter-label">Фильтр:</span>
+    <button class="filter-tab active" data-filter="all">Все кластеры</button>
+    <button class="filter-tab" data-filter="high">🔥 Высокий интент</button>
+    <button class="filter-tab" data-filter="medium">💡 Средний интент</button>
+    <button class="filter-tab" data-filter="transactional">Транзакционные</button>
+    <button class="filter-tab" data-filter="brand">По брендам</button>
+    <button class="filter-tab" data-filter="geo">Гео</button>
+    <button class="filter-tab" data-filter="rental">Аренда</button>
+  </div>
+
+  <!-- CLUSTERS GRID -->
+  <div class="clusters-grid" id="clusters-grid">
+    <!-- Generated by JS -->
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Яндекс.Директ · Кампания «Мотоциклы» · Данные Wordstat · Сгенерировано 2026-06-13
+</footer>
+
+<div id="toast">✓ Скопировано!</div>
+
+<script>
+// =====================================================================
+// DATA
+// =====================================================================
+const clusters = [
+  {
+    id: 1,
+    name: "Общие покупка",
+    type: "Транзакционные",
+    icon: "🛒",
+    intent: "high",
+    filterTags: ["all", "high", "transactional"],
+    queries: [
+      { text: "купить мотоцикл", freq: 604675 },
+      { text: "мотоцикл цена", freq: 75304 },
+      { text: "где купить мотоцикл", freq: 13794 },
+      { text: "купить новый мотоцикл", freq: 30718 },
+      { text: "покупка мотоцикла", freq: 10984 },
+      { text: "купить мотоцикл б у", freq: 10840 },
+      { text: "какой мотоцикл купить", freq: 10317 },
+      { text: "купить недорогой мотоцикл", freq: 4647 },
+      { text: "купить мотоцикл в рассрочку", freq: 4063 },
+      { text: "купить хороший мотоцикл", freq: 3265 },
+      { text: "купить мотоцикл с доставкой", freq: 2498 },
+      { text: "купить мотоцикл онлайн", freq: 1818 },
+      { text: "купить мотоцикл в кредит", freq: 1711 },
+      { text: "купить мотоцикл дешево", freq: 1630 },
+      { text: "купить мотоцикл бу недорого", freq: 1316 },
+      { text: "купить мотоцикл официальный дилер", freq: 484 },
+    ],
+    headlines: [
+      { text: "Купить мотоцикл — цены от 89 900 р.", chars: 40, limit: 56 },
+      { text: "Новые и б/у мотоциклы в наличии", chars: 33, limit: 56 },
+      { text: "Официальный дилер. Доставка по РФ", chars: 35, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Большой выбор мотоциклов. Рассрочка 0%. Доставка по всей России за 3 дня.", chars: 75, limit: 81 },
+      { text: "Покупайте мотоцикл у официального дилера. Гарантия 1 год. Кредит от 0%.", chars: 73, limit: 81 },
+      { text: "Мотоциклы в наличии и под заказ. Выгодные цены, честные условия покупки.", chars: 73, limit: 81 },
+    ],
+  },
+  {
+    id: 2,
+    name: "Эндуро / Кросс",
+    type: "Offroad / Спорт",
+    icon: "🏍",
+    intent: "high",
+    filterTags: ["all", "high", "transactional"],
+    queries: [
+      { text: "купить мотоцикл эндуро", freq: 29668 },
+      { text: "купить кроссовый мотоцикл", freq: 12463 },
+      { text: "эндуро мотоциклы кубов купить", freq: 3946 },
+      { text: "купить мотоцикл эндуро 300", freq: 3724 },
+      { text: "эндуро мотоциклы цена", freq: 3707 },
+      { text: "купить мотоцикл ктм", freq: 1815 },
+      { text: "купить питбайк", freq: 1612 },
+      { text: "купить мотоцикл кайо", freq: 1422 },
+      { text: "купить горный мотоцикл", freq: 886 },
+      { text: "купить кроссовый мотоцикл 300", freq: 875 },
+      { text: "купить кроссовый мотоцикл 250", freq: 765 },
+    ],
+    headlines: [
+      { text: "Эндуро мотоциклы 125–450 куб. см", chars: 34, limit: 56 },
+      { text: "Кроссовые мотоциклы — от 79 900 р.", chars: 36, limit: 56 },
+      { text: "KTM, Kayo, регуль — всё есть!", chars: 31, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Эндуро и кроссовые мотоциклы от ведущих брендов. Быстрая доставка по РФ.", chars: 74, limit: 81 },
+      { text: "Выбирайте мотоцикл для бездорожья у нас. Рассрочка, кредит, обмен.", chars: 68, limit: 81 },
+      { text: "Питбайки и эндуро в наличии. Проверенные модели, сервис и запчасти.", chars: 69, limit: 81 },
+    ],
+  },
+  {
+    id: 3,
+    name: "Советские / Ретро",
+    type: "Ретро · Урал · ИЖ · Минск",
+    icon: "🏛",
+    intent: "medium",
+    filterTags: ["all", "medium", "brand"],
+    queries: [
+      { text: "купить мотоцикл урал", freq: 38382 },
+      { text: "купить мотоцикл минск", freq: 31342 },
+      { text: "купить мотоцикл иж", freq: 18843 },
+      { text: "купить мотоцикл ява", freq: 13032 },
+      { text: "купить мотоцикл планета", freq: 7730 },
+      { text: "купить мотоцикл иж планета", freq: 6126 },
+      { text: "мотоцикл урал цена", freq: 4845 },
+      { text: "мотоцикл минск цена", freq: 3198 },
+      { text: "купить советский мотоцикл", freq: 1381 },
+      { text: "купить мотоцикл урал с коляской", freq: 1377 },
+    ],
+    headlines: [
+      { text: "Урал, ИЖ, Минск, Ява — купить", chars: 31, limit: 56 },
+      { text: "Советские мотоциклы с ПТС. БУ", chars: 31, limit: 56 },
+      { text: "Ретро-мотоциклы: Урал с коляской", chars: 34, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Продаём Урал, ИЖ, Минск, Яву. Новые и б/у. ПТС, гарантия юридической чистоты.", chars: 79, limit: 81 },
+      { text: "Классические советские мотоциклы в отличном состоянии. Доставка по России.", chars: 75, limit: 81 },
+      { text: "Мотоцикл Урал с коляской — легенда дорог. Новые с завода и б/у варианты.", chars: 73, limit: 81 },
+    ],
+  },
+  {
+    id: 4,
+    name: "Иномарки",
+    type: "Honda · Yamaha · Kawasaki · BMW · Harley",
+    icon: "🌐",
+    intent: "high",
+    filterTags: ["all", "high", "brand"],
+    queries: [
+      { text: "купить мотоцикл хонда", freq: 14662 },
+      { text: "купить мотоцикл ямаха", freq: 7629 },
+      { text: "купить мотоцикл бмв", freq: 5850 },
+      { text: "купить мотоцикл кавасаки", freq: 4582 },
+      { text: "купить мотоцикл сузуки", freq: 3360 },
+      { text: "купить мотоцикл харлей", freq: 3036 },
+      { text: "купить мотоцикл из японии", freq: 2845 },
+      { text: "купить японский мотоцикл", freq: 2697 },
+      { text: "харлей дэвидсон мотоциклы купить", freq: 2390 },
+      { text: "купить мотоцикл дукати", freq: 1140 },
+    ],
+    headlines: [
+      { text: "Honda, Yamaha, Kawasaki — у нас", chars: 33, limit: 56 },
+      { text: "Японские мотоциклы с пробегом", chars: 31, limit: 56 },
+      { text: "BMW, Harley, Ducati. Официально.", chars: 34, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Японские и европейские мотоциклы в наличии. Проверка истории, ПТС, кредит.", chars: 75, limit: 81 },
+      { text: "Honda, Yamaha, Kawasaki — от официального поставщика. Гарантия и сервис.", chars: 73, limit: 81 },
+      { text: "Привезём мотоцикл из Японии под заказ. Таможня, ПТС, доставка включены.", chars: 72, limit: 81 },
+    ],
+  },
+  {
+    id: 5,
+    name: "По объёму двигателя",
+    type: "cc / Кубатура",
+    icon: "⚙️",
+    intent: "medium",
+    filterTags: ["all", "medium", "transactional"],
+    queries: [
+      { text: "купить мотоцикл кубов", freq: 27647 },
+      { text: "купить мотоцикл 300", freq: 16366 },
+      { text: "купить мотоцикл 250", freq: 13072 },
+      { text: "купить мотоцикл 125", freq: 12219 },
+      { text: "мотоцикл 125 кубов купить", freq: 5187 },
+      { text: "купить мотоцикл 200", freq: 5384 },
+      { text: "купить мотоцикл 400", freq: 4699 },
+      { text: "купить мотоцикл 350", freq: 4542 },
+      { text: "купить мотоцикл 600", freq: 3027 },
+      { text: "мотоцикл 300 кубов цена", freq: 1110 },
+      { text: "мотоцикл 250 кубов цена", freq: 1032 },
+      { text: "купить мотоцикл 50 кубов", freq: 1577 },
+    ],
+    headlines: [
+      { text: "Мотоциклы 125, 250, 300 куб. см", chars: 33, limit: 56 },
+      { text: "Выбор по кубам: от 50 до 1000 cc", chars: 34, limit: 56 },
+      { text: "Нужен мотоцикл 300 куб.? Есть!", chars: 32, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Мотоциклы любого объёма в одном месте. 50–1000 куб. Цены от 55 000 руб.", chars: 72, limit: 81 },
+      { text: "Подберём мотоцикл по объёму двигателя. 125, 250, 300, 400 куб. в наличии.", chars: 74, limit: 81 },
+      { text: "Новичку — 125 куб, опытному — 600+. Консультация и подбор бесплатно.", chars: 69, limit: 81 },
+    ],
+  },
+  {
+    id: 6,
+    name: "Электро мотоциклы",
+    type: "Электро / Без прав",
+    icon: "⚡",
+    intent: "medium",
+    filterTags: ["all", "medium", "transactional"],
+    queries: [
+      { text: "купить мотоцикл электро", freq: 5578 },
+      { text: "электрический мотоцикл купить", freq: 3067 },
+      { text: "электро мотоциклы без прав цена", freq: 697 },
+      { text: "купить электрический мотоцикл взрослый", freq: 670 },
+      { text: "электрический мотоцикл цена", freq: 418 },
+    ],
+    headlines: [
+      { text: "Электромотоциклы без прав. Цены", chars: 33, limit: 56 },
+      { text: "Электрический мотоцикл от 69 900", chars: 34, limit: 56 },
+      { text: "Электробайк — тихо, быстро, дёшево", chars: 36, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Электромотоциклы для города — без прав, без бензина. Доставка по России.", chars: 73, limit: 81 },
+      { text: "Купите электробайк и забудьте о топливе. Зарядка 4–6 часов, 80 км запаса.", chars: 75, limit: 81 },
+      { text: "Тихий, экономичный, современный. Электромотоцикл — лучший выбор для города.", chars: 76, limit: 81 },
+    ],
+  },
+  {
+    id: 7,
+    name: "Гео (Города)",
+    type: "Москва · СПб · Новосибирск · Регионы",
+    icon: "📍",
+    intent: "high",
+    filterTags: ["all", "high", "geo"],
+    queries: [
+      { text: "купить мотоцикл в москве", freq: 11877 },
+      { text: "купить мотоцикл в новосибирске", freq: 6560 },
+      { text: "купить мотоцикл в спб", freq: 6389 },
+      { text: "купить мотоцикл в красноярске", freq: 5046 },
+      { text: "купить мотоцикл в екатеринбурге", freq: 3585 },
+      { text: "купить мотоцикл в омске", freq: 2629 },
+      { text: "купить мотоцикл в воронеже", freq: 2470 },
+      { text: "купить мотоцикл в нижнем новгороде", freq: 2464 },
+      { text: "купить мотоцикл в краснодаре", freq: 1847 },
+      { text: "купить мотоцикл в казани", freq: 992 },
+    ],
+    headlines: [
+      { text: "Купить мотоцикл в Москве. Дёшево", chars: 34, limit: 56 },
+      { text: "Мотосалон в Москве — 500+ моделей", chars: 35, limit: 56 },
+      { text: "Доставка мотоцикла по Москве за 1д", chars: 35, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Мотоциклы в Москве в наличии. Тест-драйв, рассрочка, трейд-ин. Звоните!", chars: 73, limit: 81 },
+      { text: "Лучший мотосалон Москвы. Новые и б/у. Кредит 0%, страховка в подарок.", chars: 71, limit: 81 },
+      { text: "Купите мотоцикл с доставкой по Москве и МО. Выезд за 2 часа. Гарантия.", chars: 72, limit: 81 },
+    ],
+  },
+  {
+    id: 8,
+    name: "Аренда мотоциклов",
+    type: "Прокат / Аренда",
+    icon: "🔑",
+    intent: "medium",
+    filterTags: ["all", "medium", "rental"],
+    queries: [
+      { text: "аренда мотоцикла", freq: 20283 },
+      { text: "аренда мотоцикла в москве", freq: 2741 },
+      { text: "аренда мотоцикла в спб", freq: 871 },
+      { text: "взять в аренду мотоцикл", freq: 686 },
+      { text: "аренда эндуро мотоцикла", freq: 582 },
+      { text: "аренда водного мотоцикла", freq: 486 },
+    ],
+    headlines: [
+      { text: "Аренда мотоцикла от 1 500 р./сут.", chars: 35, limit: 56 },
+      { text: "Взять мотоцикл напрокат — быстро", chars: 34, limit: 56 },
+      { text: "Мотоциклы в аренду без залога", chars: 31, limit: 56 },
+    ],
+    adTexts: [
+      { text: "Аренда мотоциклов в Москве и СПб. Без залога, страховка включена.", chars: 66, limit: 81 },
+      { text: "Берите мотоцикл в аренду от 1 дня. Большой выбор, удобный офис.", chars: 65, limit: 81 },
+      { text: "Прокат мотоциклов — эндуро, дорожные, спорт. Оформление за 15 минут.", chars: 70, limit: 81 },
+    ],
+  },
+];
+
+// =====================================================================
+// COMPUTE STATS
+// =====================================================================
+let totalQueries = 0;
+let totalVolume = 0;
+clusters.forEach(c => {
+  totalQueries += c.queries.length;
+  c.queries.forEach(q => totalVolume += q.freq);
+});
+
+function fmtNum(n) {
+  return n.toLocaleString('ru-RU');
+}
+
+document.getElementById('total-queries').textContent = totalQueries;
+document.getElementById('total-volume').textContent = fmtNum(totalVolume);
+
+// =====================================================================
+// RENDER CLUSTERS
+// =====================================================================
+function renderClusters() {
+  const grid = document.getElementById('clusters-grid');
+  grid.innerHTML = '';
+
+  clusters.forEach((c, ci) => {
+    const maxFreq = Math.max(...c.queries.map(q => q.freq));
+    const clusterVolume = c.queries.reduce((s, q) => s + q.freq, 0);
+    const intentBadge = c.intent === 'high'
+      ? '<span class="badge badge-high">🔥 Высокий интент</span>'
+      : '<span class="badge badge-medium">💡 Средний интент</span>';
+
+    // Build query rows
+    const queryRows = c.queries.slice(0, 8).map((q, i) => {
+      const pct = Math.round((q.freq / maxFreq) * 100);
+      return `
+        <div class="query-item">
+          <span class="query-rank">${i + 1}</span>
+          <span class="query-text" title="${q.text}">${q.text}</span>
+          <div class="query-bar-wrap">
+            <div class="query-bar" style="width:${pct}%"></div>
+          </div>
+          <span class="query-freq">${fmtNum(q.freq)}</span>
+        </div>`;
+    }).join('');
+
+    // Build headline rows
+    const headlineRows = c.headlines.map((h, hi) => {
+      const okClass = h.chars <= h.limit ? 'char-ok' : 'char-over';
+      return `
+        <div class="ad-item">
+          <div class="ad-text-content">
+            <div class="ad-text-value">${escHtml(h.text)}</div>
+            <div class="ad-text-meta">
+              <span class="char-count ${okClass}">${h.chars} / ${h.limit}</span>
+              <span class="char-limit">заголовок ${hi+1}</span>
+            </div>
+          </div>
+          <button class="btn-copy ad-copy-btn" onclick="copyText(this, ${JSON.stringify(h.text)})">Копировать</button>
+        </div>`;
+    }).join('');
+
+    // Build adText rows
+    const adTextRows = c.adTexts.map((t, ti) => {
+      const okClass = t.chars <= t.limit ? 'char-ok' : 'char-over';
+      return `
+        <div class="ad-item">
+          <div class="ad-text-content">
+            <div class="ad-text-value">${escHtml(t.text)}</div>
+            <div class="ad-text-meta">
+              <span class="char-count ${okClass}">${t.chars} / ${t.limit}</span>
+              <span class="char-limit">текст объявления ${ti+1}</span>
+            </div>
+          </div>
+          <button class="btn-copy ad-copy-btn" onclick="copyText(this, ${JSON.stringify(t.text)})">Копировать</button>
+        </div>`;
+    }).join('');
+
+    // Preview block
+    const previewHeadline = c.headlines.map(h => h.text).join(' | ');
+    const previewText = c.adTexts[0].text;
+
+    const card = document.createElement('div');
+    card.className = 'cluster-card scroll-target';
+    card.dataset.filter = c.filterTags.join(' ');
+    card.id = `cluster-${c.id}`;
+    card.style.animationDelay = `${ci * 0.05}s`;
+
+    card.innerHTML = `
+      <div class="cluster-header">
+        <div class="cluster-title-row">
+          <div class="cluster-icon">${c.icon}</div>
+          <div>
+            <div class="cluster-name">Кластер ${c.id}: ${c.name}</div>
+            <div class="cluster-type">${c.type}</div>
+          </div>
+        </div>
+        <div class="cluster-badges">
+          ${intentBadge}
+          <span class="volume-badge">📊 ${fmtNum(clusterVolume)}</span>
+        </div>
+      </div>
+
+      <div class="card-tabs">
+        <button class="card-tab active" onclick="switchTab(this, 'queries-${c.id}')">🔑 Запросы (${c.queries.length})</button>
+        <button class="card-tab" onclick="switchTab(this, 'ad-${c.id}')">📝 Объявления</button>
+        <button class="card-tab" onclick="switchTab(this, 'preview-${c.id}')">👁 Превью</button>
+      </div>
+
+      <div class="queries-panel active" id="queries-${c.id}">
+        <div class="queries-list">${queryRows}</div>
+        ${c.queries.length > 8 ? `<div style="color:var(--text-dim);font-size:11px;margin-top:10px;">+ ещё ${c.queries.length - 8} запросов</div>` : ''}
+      </div>
+
+      <div class="ad-panel" id="ad-${c.id}">
+        <div class="ad-section-label">Заголовки (макс. 56 символов)</div>
+        ${headlineRows}
+        <div class="ad-section-label">Тексты объявлений (макс. 81 символ)</div>
+        ${adTextRows}
+        <div style="margin-top:14px;">
+          <button class="btn btn-blue" onclick="copyAllAds(${c.id})" style="font-size:12px;padding:6px 14px;">📋 Скопировать все тексты кластера</button>
+        </div>
+      </div>
+
+      <div class="preview-panel" id="preview-${c.id}">
+        <div style="margin-bottom:12px;font-size:12px;color:var(--text-muted);">Предварительный просмотр объявления в поиске Яндекса</div>
+        <div class="yandex-ad-preview">
+          <div class="preview-ad-mark">Реклама</div>
+          <div class="preview-headline">${escHtml(c.headlines[0].text)}</div>
+          <div class="preview-text">${escHtml(previewText)}</div>
+          <div class="preview-url">motomarket.ru › ${escHtml(c.name.toLowerCase().replace(/[/ ]/g, '-'))}</div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:var(--text-dim);">* Превью отражает первый заголовок и первый текст. В реальной кампании заголовки чередуются.</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// =====================================================================
+// TAB SWITCHING (inside card)
+// =====================================================================
+function switchTab(btn, panelId) {
+  const card = btn.closest('.cluster-card');
+  card.querySelectorAll('.card-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  card.querySelectorAll('.queries-panel, .ad-panel, .preview-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+}
+
+// =====================================================================
+// FILTER TABS
+// =====================================================================
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.cluster-card').forEach(card => {
+      const tags = card.dataset.filter || '';
+      if (filter === 'all' || tags.includes(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// =====================================================================
+// COPY FUNCTIONS
+// =====================================================================
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('copied');
+    showToast('Текст скопирован в буфер обмена');
+    setTimeout(() => {
+      btn.textContent = 'Копировать';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('copied');
+    showToast('Текст скопирован в буфер обмена');
+    setTimeout(() => {
+      btn.textContent = 'Копировать';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+function copyAllAds(clusterId) {
+  const c = clusters.find(x => x.id === clusterId);
+  if (!c) return;
+  const lines = [];
+  lines.push(`=== Кластер ${c.id}: ${c.name} ===`);
+  lines.push('');
+  lines.push('--- ЗАГОЛОВКИ ---');
+  c.headlines.forEach((h, i) => lines.push(`${i+1}. ${h.text}`));
+  lines.push('');
+  lines.push('--- ТЕКСТЫ ОБЪЯВЛЕНИЙ ---');
+  c.adTexts.forEach((t, i) => lines.push(`${i+1}. ${t.text}`));
+  const text = lines.join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(`Все объявления кластера «${c.name}» скопированы!`);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast(`Все объявления кластера «${c.name}» скопированы!`);
+  });
+}
+
+// =====================================================================
+// TOAST
+// =====================================================================
+let toastTimeout;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// =====================================================================
+// ESCAPE HTML
+// =====================================================================
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// =====================================================================
+// EXPORT CSV
+// =====================================================================
+function exportCSV() {
+  const rows = [];
+  // BOM for Excel Russian encoding
+  rows.push('﻿Кластер ID;Кластер;Тип;Интент;Запрос;Частота;Тип строки;Текст;Символов;Лимит');
+
+  clusters.forEach(c => {
+    const clusterVolume = c.queries.reduce((s, q) => s + q.freq, 0);
+    // Meta row
+    rows.push([
+      c.id, `"${c.name}"`, `"${c.type}"`, c.intent === 'high' ? 'Высокий' : 'Средний',
+      '', clusterVolume, 'КЛАСТЕР', `"Объём кластера: ${fmtNum(clusterVolume)}"`, '', ''
+    ].join(';'));
+
+    // Queries
+    c.queries.forEach(q => {
+      rows.push([
+        c.id, `"${c.name}"`, `"${c.type}"`, c.intent === 'high' ? 'Высокий' : 'Средний',
+        `"${q.text}"`, q.freq, 'Запрос', '', '', ''
+      ].join(';'));
+    });
+
+    // Headlines
+    c.headlines.forEach((h, i) => {
+      rows.push([
+        c.id, `"${c.name}"`, `"${c.type}"`, c.intent === 'high' ? 'Высокий' : 'Средний',
+        '', '', `Заголовок ${i+1}`, `"${h.text}"`, h.chars, h.limit
+      ].join(';'));
+    });
+
+    // Ad texts
+    c.adTexts.forEach((t, i) => {
+      rows.push([
+        c.id, `"${c.name}"`, `"${c.type}"`, c.intent === 'high' ? 'Высокий' : 'Средний',
+        '', '', `Текст ${i+1}`, `"${t.text}"`, t.chars, t.limit
+      ].join(';'));
+    });
+  });
+
+  const csvContent = rows.join('\n');
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'yandex_direct_moto_clusters_2026-06-13.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('CSV-файл загружается...');
+}
+
+// =====================================================================
+// INIT
+// =====================================================================
+renderClusters();
+
+// Re-apply filter tabs after render
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
